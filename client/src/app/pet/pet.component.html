@@ -1,0 +1,9 @@
+<div class="card text-center">
+  <div class="card-body">
+    <h5 class="card-title">{{pet.name}}</h5>
+    <h6 class="card-subtitle mb-2 text-muted">{{pet.petType}}</h6>
+    <p class="card-text">{{pet.desc}}</p>
+    <a [routerLink]="['/show/', pet._id]" class="btn btn-success">Details</a>
+    <a [routerLink]="['/edit/', pet._id]" class="btn btn-danger">Edit</a>
+  </div>
+</div>

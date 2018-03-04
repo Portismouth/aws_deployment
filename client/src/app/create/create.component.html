@@ -1,0 +1,54 @@
+<h4>Know of a pet needing a home?</h4>
+<div *ngIf="displayErr == true">
+  <div *ngFor="let x of errors" class="alert alert-danger" role="alert">
+    {{x}}
+  </div>
+</div>
+<form (submit)="submitPet()">
+    <div class="form-group">
+      <label for="petForm.name">Pet Name</label>
+      <input class="form-control" 
+        type="text"
+        name="petForm.name" 
+        aria-describedby="nameHelp" 
+        placeholder="Pet's name"
+        [(ngModel)]="petForm.name"
+      >
+    </div>
+    <div class="form-group">
+      <label for="petForm.type">Pet Type</label>
+      <input class="form-control"
+        type="text" 
+        name="petForm.type" 
+        placeholder="Type of pet"
+        [(ngModel)]="petForm.type"
+      >
+    </div>
+    <div class="form-group">
+      <label for="petForm.desc">Description</label>
+      <textarea class="form-control" rows="3"       
+        name="petForm.desc"
+        [(ngModel)]="petForm.desc"
+      >
+      </textarea>
+    </div>
+    <div class="form-group">
+      <label for="skills">Skills (optional)</label>
+      <ul style="list-style: none">
+        <li>
+          <label for="petForm.skill1">Skill 1</label>
+          <input type="text" class="form-control" name="petForm.skill1" [(ngModel)]="petForm.skill1">
+        </li>
+        <li>
+          <label for="petForm.skill2">Skill 2</label>
+          <input type="text" class="form-control" name="petForm.skill2" [(ngModel)]="petForm.skill2">
+        </li>
+        <li>
+          <label for="petForm.skill3">Skill 3</label>
+          <input type="text" class="form-control" name="petForm.skill3" [(ngModel)]="petForm.skill3">
+        </li>
+      </ul>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <button [routerLink]="['/home']" class="btn btn-secondary">Cancel</button>
+</form>

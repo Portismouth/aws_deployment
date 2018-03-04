@@ -1,0 +1,41 @@
+<h4>Edit {{editPet.name}}'s info</h4>
+<div *ngIf="displayErr == true">
+  <div *ngFor="let x of errors" class="alert alert-danger" role="alert">
+    {{x}}
+  </div>
+</div>
+<form (submit)="submitEditPet()">
+  <input type="hidden" value="editPet.id">
+  <div class="form-group">
+    <label for="editPet.name">Pet Name</label>
+    <input class="form-control" type="text" name="editPet.name" aria-describedby="nameHelp" placeholder="Pet's name" [(ngModel)]="editPet.name">
+  </div>
+  <div class="form-group">
+    <label for="editPet.type">editPet Type</label>
+    <input class="form-control" type="text" name="editPet.type" placeholder="Type of Pet" [(ngModel)]="editPet.type">
+  </div>
+  <div class="form-group">
+    <label for="editPet.desc">Description</label>
+    <textarea class="form-control" rows="3" name="editPet.desc" [(ngModel)]="editPet.desc">
+      </textarea>
+  </div>
+  <div class="form-group">
+    <label for="skills">Skills (optional)</label>
+    <ul style="list-style: none">
+      <li>
+        <label for="editPet.skill1">Skill 1</label>
+        <input type="text" class="form-control" name="editPet.skill1" [(ngModel)]="editPet.skill1">
+      </li>
+      <li>
+        <label for="editPet.skill2">Skill 2</label>
+        <input type="text" class="form-control" name="editPet.skill2" [(ngModel)]="editPet.skill2">
+      </li>
+      <li>
+        <label for="editPet.skill3">Skill 3</label>
+        <input type="text" class="form-control" name="editPet.skill3" [(ngModel)]="editPet.skill3">
+      </li>
+    </ul>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+  <button type="submit" class="btn btn-secondary">Cancel</button>
+</form>

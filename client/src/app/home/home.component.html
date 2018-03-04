@@ -1,0 +1,4 @@
+<h4>These pets are looking for a new home!</h4>
+<a [routerLink]="['/new']">Add a pet to the shelter</a>
+<app-pet *ngFor="let mypet of pets" [pet]="mypet"></app-pet>
+
